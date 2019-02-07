@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Contests{% endblock %}</title>
+
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+    {% load tz %}
+    {% block script %}
+    {% endblock script %}
+</head>
+<body>
+
+    {% if messages %}
+
+      {% for message in messages %}
+        <p {% if message.tags %} class="{{ message.tags }}"{% endif %} > {{ message }}</p>
+      {% endfor %}
+
+    {% endif %}
+    <div class="col-lg-10">
+    {% block content %}
+    {% endblock content %}
+    </div>
+
+    {% block script2 %}
+    {% endblock script2 %}
+
+</body>
+</html>
